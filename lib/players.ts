@@ -151,7 +151,7 @@ export const players: Player[] = [
   {
     id: 'lsv',
     name: 'Luis Scott-Vargas',
-    image: '/players/lsv.png',
+    image: '/players/lsv.jpg',
     nickname: 'LSV',
     era: 'The Modern Pros',
     eraTag: '2007 – 2014',
@@ -181,7 +181,7 @@ export const players: Player[] = [
   {
     id: 'shenhar',
     name: 'Shahar Shenhar',
-    image: '/players/shenhar.png',
+    image: '/players/shenhar.jpg',
     nickname: 'The Two-Time',
     era: 'The Modern Pros',
     eraTag: '2013 – 2014',
@@ -209,7 +209,7 @@ export const players: Player[] = [
   {
     id: 'pvddr',
     name: 'Paulo Vitor Damo da Rosa',
-    image: '/players/pvddr.png',
+    image: '/players/pvddr.jpg',
     nickname: 'PVDDR',
     era: 'The Present Day',
     eraTag: '2015 – present',
@@ -240,7 +240,7 @@ export const players: Player[] = [
   {
     id: 'manfield',
     name: 'Seth Manfield',
-    image: '/players/manfield.png',
+    image: '/players/manfield.jpg',
     nickname: 'The Grinder',
     era: 'The Present Day',
     eraTag: '2015 – present',
