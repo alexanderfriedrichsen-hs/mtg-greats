@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { leaderboard, ELO_MIN } from '@/lib/players'
 import { ManaPips } from './mana-pips'
 
@@ -32,6 +33,15 @@ export function Leaderboard() {
               </span>
 
               <div className="flex items-center gap-3">
+                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm border border-border bg-background/40">
+                  <Image
+                    src={p.image || '/placeholder.svg'}
+                    alt={`Portrait of ${p.name}`}
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
+                </div>
                 <ManaPips colors={p.colors} size={16} />
                 <span className="truncate font-display text-lg font-medium text-foreground md:text-xl">
                   {p.name}

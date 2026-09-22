@@ -5,6 +5,7 @@ export type EloPoint = { year: number; elo: number }
 export type Player = {
   id: string
   name: string
+  image: string
   nickname: string
   era: string
   eraTag: string
@@ -31,6 +32,7 @@ export const players: Player[] = [
   {
     id: 'finkel',
     name: 'Jon Finkel',
+    image: '/players/finkel.png',
     nickname: 'Jonny Magic',
     era: 'The First Legends',
     eraTag: '1996 – 1999',
@@ -62,6 +64,7 @@ export const players: Player[] = [
   {
     id: 'budde',
     name: 'Kai Budde',
+    image: '/players/budde.png',
     nickname: 'The German Juggernaut',
     era: 'The First Legends',
     eraTag: '1997 – 2004',
@@ -90,6 +93,7 @@ export const players: Player[] = [
   {
     id: 'nassif',
     name: 'Gabriel Nassif',
+    image: '/players/nassif.png',
     nickname: 'Yellowhat',
     era: 'The Golden Age',
     eraTag: '2000 – 2006',
@@ -119,6 +123,7 @@ export const players: Player[] = [
   {
     id: 'tsumura',
     name: 'Kenji Tsumura',
+    image: '/players/tsumura.png',
     nickname: 'The Prodigy',
     era: 'The Golden Age',
     eraTag: '2003 – 2008',
@@ -146,6 +151,7 @@ export const players: Player[] = [
   {
     id: 'lsv',
     name: 'Luis Scott-Vargas',
+    image: '/players/lsv.png',
     nickname: 'LSV',
     era: 'The Modern Pros',
     eraTag: '2007 – 2014',
@@ -175,6 +181,7 @@ export const players: Player[] = [
   {
     id: 'shenhar',
     name: 'Shahar Shenhar',
+    image: '/players/shenhar.png',
     nickname: 'The Two-Time',
     era: 'The Modern Pros',
     eraTag: '2013 – 2014',
@@ -202,6 +209,7 @@ export const players: Player[] = [
   {
     id: 'pvddr',
     name: 'Paulo Vitor Damo da Rosa',
+    image: '/players/pvddr.png',
     nickname: 'PVDDR',
     era: 'The Present Day',
     eraTag: '2015 – present',
@@ -232,6 +240,7 @@ export const players: Player[] = [
   {
     id: 'manfield',
     name: 'Seth Manfield',
+    image: '/players/manfield.png',
     nickname: 'The Grinder',
     era: 'The Present Day',
     eraTag: '2015 – present',
@@ -282,4 +291,4 @@ export const playerColorToken: Record<string, string> = {
 // All-time peak leaderboard for the closing section.
 export const leaderboard = [...players]
   .sort((a, b) => b.peakElo - a.peakElo)
-  .map((p) => ({ id: p.id, name: p.name, peakElo: p.peakElo, peakYear: p.peakYear, colors: p.colors }))
+  .map((p) => ({ id: p.id, name: p.name, image: p.image, peakElo: p.peakElo, peakYear: p.peakYear, colors: p.colors }))

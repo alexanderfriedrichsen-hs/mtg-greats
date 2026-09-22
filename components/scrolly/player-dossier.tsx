@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ManaPips } from './mana-pips'
 import type { Player } from '@/lib/players'
 
@@ -18,19 +19,30 @@ export function PlayerDossier({ player }: { player: Player | null }) {
 
   return (
     <div key={player.id} className="animate-dossier-in border-t border-gold/40 pt-4">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-gold">
-            {player.era} · {player.eraTag}
-          </p>
-          <h3 className="mt-1 truncate font-display text-2xl font-semibold leading-none text-foreground md:text-3xl">
-            {player.name}
-          </h3>
-          <p className="mt-1 font-sans text-xs text-muted-foreground">
-            &ldquo;{player.nickname}&rdquo; · {player.country}
-          </p>
+      <div className="flex items-start gap-3">
+        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-sm border border-gold/40 bg-background/40 md:h-[76px] md:w-[76px]">
+          <Image
+            src={player.image || '/placeholder.svg'}
+            alt={`Portrait of ${player.name}`}
+            fill
+            sizes="76px"
+            className="object-cover"
+          />
         </div>
-        <ManaPips colors={player.colors} size={18} />
+        <div className="flex min-w-0 flex-1 items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-gold">
+              {player.era} · {player.eraTag}
+            </p>
+            <h3 className="mt-1 truncate font-display text-2xl font-semibold leading-none text-foreground md:text-3xl">
+              {player.name}
+            </h3>
+            <p className="mt-1 font-sans text-xs text-muted-foreground">
+              &ldquo;{player.nickname}&rdquo; · {player.country}
+            </p>
+          </div>
+          <ManaPips colors={player.colors} size={18} />
+        </div>
       </div>
 
       <dl className="mt-4 grid grid-cols-3 gap-2">
